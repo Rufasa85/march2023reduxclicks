@@ -1,6 +1,6 @@
-import { INCREMENT_COUNT, RESET_COUNT } from "./actions";
+import { INCREMENT_COUNT, RESET_COUNT, UPDATE_NAME } from "./actions";
 
-export default function reducer(state, action) {
+export default function countReducer(state, action) {
   switch (action.type) {
     case INCREMENT_COUNT:
       return {
@@ -12,7 +12,11 @@ export default function reducer(state, action) {
         ...state,
         count: 0,
       };
-
+    case UPDATE_NAME:
+      return {
+        ...state,
+       name:action.payload || ""
+      };
     default:
       return state;
   }

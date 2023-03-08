@@ -1,13 +1,15 @@
-import React,{useState} from "react"
+import React from "react"
 import First from "./components/First";
+import { CountProvider } from "./utils/CountContext";
 
 function App() {
-  const [count, setCount] = useState(0)
   return (
+    <CountProvider>
     <div className="App">
      <h1>Its a me, Mario</h1>
-     <First count={count} setCount={setCount}/>
+     <First/>
     </div>
+    </CountProvider>
   );
 }
 
